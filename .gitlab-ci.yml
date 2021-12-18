@@ -17,6 +17,7 @@ build:
       
     expire_in: 1 hour
   script:
+    - source /opt/Xilinx/petalinux/settings.sh
     - petalinux-build
     - source package.sh
   
