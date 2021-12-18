@@ -1,0 +1,16 @@
+#Note: Mention Each package in individual line
+#These packages will get added into rootfs menu entry
+
+CONFIG_gpio-demo
+CONFIG_peekpoke
+CONFIG_iperf3
+CONFIG_memtester
+CONFIG_phytool
+CONFIG_python
+CONFIG_python3
+CONFIG_python3-jupyter
+CONFIG_python-periphery
+CONFIG_python3-periphery
+CONFIG_git
+CONFIG_git-perltools
+CONFIG_nano
