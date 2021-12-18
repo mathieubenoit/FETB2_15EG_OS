@@ -1,7 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://platform-top.h \
-            file://devtool-fragment.cfg \
             "
 SRC_URI += " file://zynqmp_board.patch"
 SRC_URI += " file://qspi.patch"

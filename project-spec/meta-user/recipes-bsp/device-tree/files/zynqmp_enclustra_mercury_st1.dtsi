@@ -1,4 +1,3 @@
-#include <dt-bindings/clock/clk-si5338.h>
 #include <dt-bindings/phy/phy.h>
 
 &usb0 {

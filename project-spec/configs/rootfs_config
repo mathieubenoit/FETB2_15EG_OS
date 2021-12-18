@@ -4201,14 +4201,14 @@ CONFIG_packagegroup-petalinux-python-modules=y
 #
 # packagegroup-petalinux-weston 
 #
-# CONFIG_packagegroup-petalinux-weston is not set
+CONFIG_packagegroup-petalinux-weston=y
 # CONFIG_packagegroup-petalinux-weston-dbg is not set
 # CONFIG_packagegroup-petalinux-weston-dev is not set
 
 #
 # packagegroup-petalinux-x11 
 #
-CONFIG_packagegroup-petalinux-x11=y
+# CONFIG_packagegroup-petalinux-x11 is not set
 # CONFIG_packagegroup-petalinux-x11-dev is not set
 # CONFIG_packagegroup-petalinux-x11-dbg is not set
 
@@ -4234,7 +4234,7 @@ CONFIG_imagefeature-ssh-server-dropbear=y
 CONFIG_imagefeature-hwcodecs=y
 # CONFIG_imagefeature-package-management is not set
 CONFIG_imagefeature-debug-tweaks=y
-# CONFIG_auto-login is not set
+CONFIG_auto-login=y
 
 #
 # apps 
