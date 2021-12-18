@@ -15,9 +15,7 @@ build:
       - images/linux/BOOT.BIN
       - images/linux/petalinux-image.wic
       
-    expire_in: 1 hour
+    expire_in: 1 week
   script:
     - source /opt/Xilinx/petalinux/settings.sh
-    - petalinux-build
-    - source package.sh
-  
+    - petalinux-build  
