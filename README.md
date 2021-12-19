@@ -34,7 +34,7 @@ petalinux-config -c rootfs
 
 If you know the package to be added, you can add it to the [user rootfs config file](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/fetb2os/fetb2_xu1_15eg/-/blob/master/project-spec/meta-user/conf/user-rootfsconfig), pre-pended by `CONFIG`, and activate it in the interactive menu using the precedent command. 
 
-THe device tree can be appended via the [user device tree file](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/fetb2os/fetb2_xu1_15eg/-/blob/master/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi). Add device tree code appendage in there to apply to the final device tree build.
+The device tree can be appended via the [user device tree file](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/fetb2os/fetb2_xu1_15eg/-/blob/master/project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi). Add device tree code appendage in there to apply to the final device tree build.
 
 The kernel and u-boot can also be configured, by expert. Contact `mbenoitNOSPAM@bnl.gov` for help on that matter.
 
