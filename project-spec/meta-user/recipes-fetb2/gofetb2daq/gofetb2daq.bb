@@ -1,8 +1,8 @@
 SUMMARY = "FETB2 go tools"
 LICENSE = "CLOSED"
 
-GO_IMPORT = "git@gitlab.cern.ch:7999/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git"
-SRC_URI = "git://git@gitlab.cern.ch:7999/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git;protocol=ssh;branch=master"
+GO_IMPORT = "gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git"
+SRC_URI = "git://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git;protocol=https;branch=master;user=oauth2:LNKYs1ksNs7sut9ApXTf"
 SRCREV = "${AUTOREV}"
 
 GO_INSTALL = "${GO_IMPORT}/bin/linux_arm64/*"
