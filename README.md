@@ -7,7 +7,7 @@ This repository contains the files needed to generate the Petalinux OS (2020.2) 
 To proceed to the image compilation, you must install and source the petalinux-tools, version 2020.2, that can be downloaded from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools/2020-2.html). 
 
 
-## compilation
+## Initialisation
 
 First, source the petalinux-tools environement : 
 ```
@@ -21,6 +21,22 @@ petalinux-config --get-hw-description FIRMWARE.XSA
 ```
 
 The configuration menu will be spawned, make modifications if required, then save and quit. 
+
+## Customisation
+
+The OS image contains most important package and software needed for operation. The go compiler and the [goFETB2DAQ](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/gofetb2daq) are precompiled and included in the image. 
+
+The image root file system can be further modified to add additional software to the image. To do so, you can select software from the interactive menu bu using : 
+
+```
+petalinux-config -c rootfs
+```
+
+If you know the package to be added, you can add it to the [user rootfs config file](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/fetb2os/fetb2_xu1_15eg/-/blob/master/project-spec/meta-user/conf/user-rootfsconfig), pre-pended by `CONFIG`, and activate it in the interactive menu using the precedent command. 
+
+The kernel and u-boot can also be configured, by expert. Contact `mbenoitNOSPAM@bnl.gov` for help on that matter.
+
+## compilation
 
 To launch the image compilation, use : 
 
