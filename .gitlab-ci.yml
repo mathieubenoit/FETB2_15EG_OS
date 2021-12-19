@@ -13,8 +13,7 @@ build:
       - images/linux/Image
       - images/linux/boot.scr
       - images/linux/BOOT.BIN
-      
-    expire_in: 1 week
+     
   script:
     - source /opt/Xilinx/petalinux/settings.sh
     - petalinux-build  
