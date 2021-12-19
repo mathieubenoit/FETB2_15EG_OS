@@ -4245,6 +4245,7 @@ CONFIG_auto-login=y
 #
 # user packages 
 #
+CONFIG_go=y
 CONFIG_iperf3=y
 CONFIG_memtester=y
 CONFIG_nano=y
