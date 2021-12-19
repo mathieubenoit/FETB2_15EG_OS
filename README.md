@@ -38,6 +38,8 @@ The kernel and u-boot can also be configured, by expert. Contact `mbenoitNOSPAM@
 
 ## compilation
 
+If you do not need to customize the image, most likely the latest results of the Continuous Integration compilation are sufficient to create an image. You can download the required files from the [latest artifacts](https://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/fetb2os/fetb2_xu1_15eg/-/jobs/artifacts/master/browse?job=build) and follow the instruction of the following section. 
+
 To launch the image compilation, use : 
 
 ```
