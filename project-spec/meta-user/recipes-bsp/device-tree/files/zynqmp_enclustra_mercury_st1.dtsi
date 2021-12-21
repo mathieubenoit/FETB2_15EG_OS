@@ -55,6 +55,55 @@
 	dmas = <&xlnx_dpdma 0>, <&xlnx_dpdma 1>, <&xlnx_dpdma 2>, <&xlnx_dpdma 3>;
 };
 
+/* DisplayPort */
+&zynqmp_dpsub {
+	status = "okay";
+	xlnx,vid-clk-pl;
+	
+	xlnx_dp_sub: zynqmp_dpsub@fd4a0000 {
+		compatible = "xlnx,zynqmp-dpsub-1.7";
+		reg = <0xfd4a0000 0x1000>, 
+                      <0xfd4aa000 0x1000>, 
+                      <0xfd4ab000 0x1000>, 
+                      <0xfd4ac000 0x1000>;
+		reg-names = "dp", "blend", "av_buf", "aud";
+		xlnx,output-fmt = "rgb";
+
+		xilinx_drm {
+			compatible = "xlnx,drm";
+			clocks = <&zynqmp_clk 16>;
+			xlnx,connector-type = "DisplayPort";
+			
+			planes {
+				xlnx,pixel-format = "rgb565";
+				gfx-layer {
+					dmas = <&xlnx_dpdma 3>;
+					dma-names = "gfx0";
+				};
+				vid-layer {
+					dmas = <&xlnx_dpdma 0>, 
+                                               <&xlnx_dpdma 1>, 
+                                               <&xlnx_dpdma 2>;
+					dma-names = "vid0", "vid1", "vid2";
+				};
+			};
+		};
+
+		ports {
+			port@0 {
+				reg = <0>;
+
+				dp_out: endpoint {
+					remote-endpoint = <&dp_out>;
+				};
+			};
+		};
+
+	};
+};
+
+
+
 &zynqmp_dp_snd_pcm0 {
     status = "disabled";
 };
