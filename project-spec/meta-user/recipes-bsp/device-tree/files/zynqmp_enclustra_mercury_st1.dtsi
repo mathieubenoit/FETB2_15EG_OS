@@ -47,75 +47,55 @@
 	status = "okay";
 };
 
-&zynqmp_dpsub {
-	status = "okay";
-	phy-names = "dp-phy0", "dp-phy1";
-	phys = <&lane1 PHY_TYPE_DP 0x0 0x3 27000000>, <&lane0 PHY_TYPE_DP 0x1 0x3 27000000>;
+zynqmp_dpsub: display@fd4a0000 {
+	compatible = "xlnx,zynqmp-dpsub-1.7";
+	status = "disabled";
+	reg = <0x0 0xfd4a0000 0x0 0x1000>,
+		<0x0 0xfd4aa000 0x0 0x1000>,
+		<0x0 0xfd4ab000 0x0 0x1000>,
+		<0x0 0xfd4ac000 0x0 0x1000>;
+	reg-names = "dp", "blend", "av_buf", "aud";
+	interrupts = <0 119 4>;
+	interrupt-parent = <&gic>;
+	#stream-id-cells = <1>;
+	iommus = <&smmu 0xce3>;
+
+	clock-names = "dp_apb_clk", "dp_aud_clk",
+			"dp_vtc_pixel_clk_in";
+
+	power-domains = <&zynqmp_firmware PD_DP>;
+	resets = <&zynqmp_reset ZYNQMP_RESET_DP>;
 	dma-names = "vid0", "vid1", "vid2", "gfx0";
-	dmas = <&xlnx_dpdma 0>, <&xlnx_dpdma 1>, <&xlnx_dpdma 2>, <&xlnx_dpdma 3>;
-};
+	dmas = <&zynqmp_dpdma ZYNQMP_DPDMA_VIDEO0>,
+		<&zynqmp_dpdma ZYNQMP_DPDMA_VIDEO1>,
+		<&zynqmp_dpdma ZYNQMP_DPDMA_VIDEO2>,
+		<&zynqmp_dpdma ZYNQMP_DPDMA_GRAPHICS>;
 
-/* DisplayPort */
-&zynqmp_dpsub {
-	status = "okay";
-	xlnx,vid-clk-pl;
-	
-	xlnx_dp_sub: zynqmp_dpsub@fd4a0000 {
-		compatible = "xlnx,zynqmp-dpsub-1.7";
-		reg = <0xfd4a0000 0x1000>, 
-                      <0xfd4aa000 0x1000>, 
-                      <0xfd4ab000 0x1000>, 
-                      <0xfd4ac000 0x1000>;
-		reg-names = "dp", "blend", "av_buf", "aud";
-		xlnx,output-fmt = "rgb";
-
-		xilinx_drm {
-			compatible = "xlnx,drm";
-			clocks = <&zynqmp_clk 16>;
-			xlnx,connector-type = "DisplayPort";
-			
-			planes {
-				xlnx,pixel-format = "rgb565";
-				gfx-layer {
-					dmas = <&xlnx_dpdma 3>;
-					dma-names = "gfx0";
-				};
-				vid-layer {
-					dmas = <&xlnx_dpdma 0>, 
-                                               <&xlnx_dpdma 1>, 
-                                               <&xlnx_dpdma 2>;
-					dma-names = "vid0", "vid1", "vid2";
-				};
-			};
-		};
-
-		ports {
-			port@0 {
-				reg = <0>;
-
-				dp_out: endpoint {
-					remote-endpoint = <&dp_out>;
-				};
-			};
-		};
-
+	/* dummy node to indicate there's no child i2c device */
+	i2c-bus {
 	};
-};
 
+	zynqmp_dp_snd_codec0: zynqmp_dp_snd_codec0 {
+		compatible = "xlnx,dp-snd-codec";
+		clock-names = "aud_clk";
+	};
 
+	zynqmp_dp_snd_pcm0: zynqmp_dp_snd_pcm0 {
+		compatible = "xlnx,dp-snd-pcm0";
+		dmas = <&zynqmp_dpdma 4>;
+		dma-names = "tx";
+	};
 
-&zynqmp_dp_snd_pcm0 {
-    status = "disabled";
-};
+	zynqmp_dp_snd_pcm1: zynqmp_dp_snd_pcm1 {
+		compatible = "xlnx,dp-snd-pcm1";
+		dmas = <&zynqmp_dpdma 5>;
+		dma-names = "tx";
+	};
 
-&zynqmp_dp_snd_pcm1 {
-    status = "disabled";
-};
-
-&zynqmp_dp_snd_card0 {
-    status = "disabled";
-};
-
-&zynqmp_dp_snd_codec0 {
-    status = "disabled";
+	zynqmp_dp_snd_card0: zynqmp_dp_snd_card {
+		compatible = "xlnx,dp-snd-card";
+		xlnx,dp-snd-pcm = <&zynqmp_dp_snd_pcm0>,
+				<&zynqmp_dp_snd_pcm1>;
+		xlnx,dp-snd-codec = <&zynqmp_dp_snd_codec0>;
+	};
 };
