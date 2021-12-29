@@ -6,6 +6,8 @@
 #include "zynqmp_enclustra_mercury_st1.dtsi"
 #include "zynqmp_enclustra_mercury_xu1.dtsi"
 
+
+
 &i2c0 {
 	i2cswitch@70 {
 		    	compatible = "nxp,pca9548";
@@ -31,9 +33,9 @@
 					#address-cells = <1>;
 					#size-cells = <0>;
 					reg = <2>;
-					temp-sensor@1a {
+					temp-sensor@1c {
 						compatible = "maxim,max6698";
-						reg = <0x1a>;
+						reg = <0x1c>;
 						smbus-timeout-disable;
 						resistance-cancellation;
 						alert-mask = <0x72>;
@@ -52,7 +54,7 @@
     };
 };
 
-// &spi2 { 
+// &spi@ff040000 { 
 //         spidev@0 {
 //             compatible = "spidev";
 //             reg = <0>;

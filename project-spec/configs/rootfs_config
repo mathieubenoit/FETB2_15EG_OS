@@ -4245,6 +4245,7 @@ CONFIG_auto-login=y
 #
 # apps 
 #
+CONFIG_si5345init=y
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
 
