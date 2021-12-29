@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "Hello PetaLinux World"
+exec /home/root/Si5345Tool
 
