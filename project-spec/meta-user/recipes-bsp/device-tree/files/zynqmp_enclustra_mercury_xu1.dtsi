@@ -5,6 +5,7 @@
 		i2c0 = &i2c0;
 		serial0 = &uart0;
 		spi0 = &qspi;
+		spi1 = &spi1;
 	};
 };
 
