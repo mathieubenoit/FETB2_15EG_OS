@@ -42,3 +42,20 @@
 				};
 	};
 };
+
+
+&spi1 { 
+        spidev@0 {
+            compatible = "spidev";
+            reg = <0>;
+            spi-max-frequency = <400000>;
+    };
+};
+
+&spi2 { 
+        spidev@0 {
+            compatible = "spidev";
+            reg = <0>;
+            spi-max-frequency = <400000>;
+    };
+};
