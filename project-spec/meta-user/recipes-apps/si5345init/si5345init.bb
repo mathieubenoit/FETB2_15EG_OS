@@ -14,7 +14,7 @@ S = "${WORKDIR}"
 
 inherit update-rc.d
 INITSCRIPT_NAME = "si5345init"
-
+INITSCRIPT_PARAMS = "start 99 5 2 . stop 20 0 1 6 ."
 
 do_install() {
 		 install -d ${D}${sysconfdir}/init.d
