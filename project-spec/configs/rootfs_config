@@ -59,7 +59,7 @@ CONFIG_system-zynqmp=y
 #
 # busybox 
 #
-# CONFIG_busybox is not set
+CONFIG_busybox=y
 # CONFIG_busybox-inetd is not set
 # CONFIG_busybox-dbg is not set
 # CONFIG_busybox-syslog is not set
