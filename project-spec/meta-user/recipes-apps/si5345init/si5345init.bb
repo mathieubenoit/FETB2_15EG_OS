@@ -19,6 +19,8 @@ INITSCRIPT_PARAMS = "start 99 5 2 . stop 20 0 1 6 ."
 do_install() {
 		 install -d ${D}${sysconfdir}/init.d
 		 install -m 0755 ${S}/si5345init ${D}${sysconfdir}/init.d/si5345init
+		 install -d ${D}${sysconfdir}/rc5.d
+		 install -m 0755 ${S}/si5345init ${D}${sysconfdir}/rc5.d/si5345init
 }
 
 FILES_${PN} += "${sysconfdir}/*"
