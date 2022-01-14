@@ -325,7 +325,7 @@ CONFIG_mtd-utils=y
 #
 # tzdata 
 #
-# CONFIG_tzdata is not set
+CONFIG_tzdata=y
 # CONFIG_tzdata-pacific is not set
 # CONFIG_tzdata-posix is not set
 # CONFIG_tzdata-antarctica is not set
@@ -4245,13 +4245,19 @@ CONFIG_auto-login=y
 #
 # apps 
 #
-CONFIG_si5345init=y
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
+CONFIG_xvcserver=y
+
+#
+# modules 
+#
+CONFIG_xvc-driver=y
 
 #
 # user packages 
 #
+# CONFIG_Si5345Init is not set
 CONFIG_go=y
 CONFIG_gofetb2daq=y
 CONFIG_iperf3=y

@@ -7,7 +7,6 @@
 #include "zynqmp_enclustra_mercury_xu1.dtsi"
 
 
-
 &i2c0 {
 	i2cswitch@70 {
 		    	compatible = "nxp,pca9548";
@@ -54,10 +53,7 @@
     };
 };
 
-// &spi@ff040000 { 
-//         spidev@0 {
-//             compatible = "spidev";
-//             reg = <0>;
-//             spi-max-frequency = <400000>;
-//     };
+// &debug_bridge_0 {
+//         compatible = "xlnx,xvc";
 // };
+
