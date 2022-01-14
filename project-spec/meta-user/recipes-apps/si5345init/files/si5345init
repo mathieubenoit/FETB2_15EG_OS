@@ -1,5 +1,4 @@
 #!/bin/sh
 
-./home/root/Si5345Tool
-
+exec /home/root/Si5345Tool
 
