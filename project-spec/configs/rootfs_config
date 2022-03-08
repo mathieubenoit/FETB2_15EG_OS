@@ -59,7 +59,7 @@ CONFIG_system-zynqmp=y
 #
 # busybox 
 #
-# CONFIG_busybox is not set
+CONFIG_busybox=y
 # CONFIG_busybox-inetd is not set
 # CONFIG_busybox-dbg is not set
 # CONFIG_busybox-syslog is not set
@@ -325,7 +325,7 @@ CONFIG_mtd-utils=y
 #
 # tzdata 
 #
-# CONFIG_tzdata is not set
+CONFIG_tzdata=y
 # CONFIG_tzdata-pacific is not set
 # CONFIG_tzdata-posix is not set
 # CONFIG_tzdata-antarctica is not set
@@ -1645,9 +1645,13 @@ CONFIG_run-postinsts=y
 #
 # libmali-xlnx 
 #
-# CONFIG_libmali-xlnx is not set
+CONFIG_libmali-xlnx=y
 # CONFIG_libmali-xlnx-dbg is not set
-# CONFIG_libmali-xlnx-dev is not set
+CONFIG_libmali-xlnx-dev=y
+# CONFIG_mali-backend-fbdev is not set
+# CONFIG_mali-backend-headless is not set
+# CONFIG_mali-backend-wayland is not set
+CONFIG_mali-backend-x11=y
 
 #
 # libmetal 
@@ -1812,7 +1816,7 @@ CONFIG_run-postinsts=y
 #
 # libx11 
 #
-# CONFIG_libx11 is not set
+CONFIG_libx11=y
 # CONFIG_libx11-xcb is not set
 # CONFIG_libx11-dev is not set
 # CONFIG_libx11-dbg is not set
@@ -1841,7 +1845,7 @@ CONFIG_run-postinsts=y
 #
 # libxdamage 
 #
-# CONFIG_libxdamage is not set
+CONFIG_libxdamage=y
 # CONFIG_libxdamage-dbg is not set
 # CONFIG_libxdamage-dev is not set
 
@@ -1855,14 +1859,14 @@ CONFIG_run-postinsts=y
 #
 # libxext 
 #
-# CONFIG_libxext is not set
+CONFIG_libxext=y
 # CONFIG_libxext-dev is not set
 # CONFIG_libxext-dbg is not set
 
 #
 # libxfixes 
 #
-# CONFIG_libxfixes is not set
+CONFIG_libxfixes=y
 # CONFIG_libxfixes-dev is not set
 # CONFIG_libxfixes-dbg is not set
 
@@ -4053,7 +4057,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux-audio 
 #
-# CONFIG_packagegroup-petalinux-audio is not set
+CONFIG_packagegroup-petalinux-audio=y
 # CONFIG_packagegroup-petalinux-audio-dbg is not set
 # CONFIG_packagegroup-petalinux-audio-dev is not set
 
@@ -4067,7 +4071,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux-display-debug 
 #
-# CONFIG_packagegroup-petalinux-display-debug is not set
+CONFIG_packagegroup-petalinux-display-debug=y
 # CONFIG_packagegroup-petalinux-display-debug-dbg is not set
 # CONFIG_packagegroup-petalinux-display-debug-dev is not set
 
@@ -4088,7 +4092,7 @@ CONFIG_hellopm=y
 #
 # packagegroup-petalinux-matchbox 
 #
-# CONFIG_packagegroup-petalinux-matchbox is not set
+CONFIG_packagegroup-petalinux-matchbox=y
 # CONFIG_packagegroup-petalinux-matchbox-dbg is not set
 # CONFIG_packagegroup-petalinux-matchbox-dev is not set
 
@@ -4180,14 +4184,14 @@ CONFIG_packagegroup-petalinux-python-modules=y
 #
 # packagegroup-petalinux-utils 
 #
-# CONFIG_packagegroup-petalinux-utils is not set
+CONFIG_packagegroup-petalinux-utils=y
 # CONFIG_packagegroup-petalinux-utils-dbg is not set
 # CONFIG_packagegroup-petalinux-utils-dev is not set
 
 #
 # packagegroup-petalinux-v4lutils 
 #
-# CONFIG_packagegroup-petalinux-v4lutils is not set
+CONFIG_packagegroup-petalinux-v4lutils=y
 # CONFIG_packagegroup-petalinux-v4lutils-dbg is not set
 # CONFIG_packagegroup-petalinux-v4lutils-dev is not set
 
@@ -4201,7 +4205,7 @@ CONFIG_packagegroup-petalinux-python-modules=y
 #
 # packagegroup-petalinux-weston 
 #
-# CONFIG_packagegroup-petalinux-weston is not set
+CONFIG_packagegroup-petalinux-weston=y
 # CONFIG_packagegroup-petalinux-weston-dbg is not set
 # CONFIG_packagegroup-petalinux-weston-dev is not set
 
@@ -4209,7 +4213,7 @@ CONFIG_packagegroup-petalinux-python-modules=y
 # packagegroup-petalinux-x11 
 #
 CONFIG_packagegroup-petalinux-x11=y
-# CONFIG_packagegroup-petalinux-x11-dev is not set
+CONFIG_packagegroup-petalinux-x11-dev=y
 # CONFIG_packagegroup-petalinux-x11-dbg is not set
 
 #
@@ -4232,19 +4236,30 @@ CONFIG_packagegroup-petalinux-x11=y
 CONFIG_imagefeature-ssh-server-dropbear=y
 # CONFIG_imagefeature-ssh-server-openssh is not set
 CONFIG_imagefeature-hwcodecs=y
-# CONFIG_imagefeature-package-management is not set
+CONFIG_imagefeature-package-management=y
+CONFIG_package-feed-uris="http://petalinux.xilinx.com/sswreleases/rel-v2020/feeds/ultra96-zynqmp/"
+CONFIG_package-feed-archs=""
 CONFIG_imagefeature-debug-tweaks=y
-# CONFIG_auto-login is not set
+CONFIG_auto-login=y
 
 #
 # apps 
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
+CONFIG_xvcserver=y
+
+#
+# modules 
+#
+CONFIG_xvc-driver=y
 
 #
 # user packages 
 #
+# CONFIG_Si5345Init is not set
+CONFIG_go=y
+CONFIG_gofetb2daq=y
 CONFIG_iperf3=y
 CONFIG_memtester=y
 CONFIG_nano=y

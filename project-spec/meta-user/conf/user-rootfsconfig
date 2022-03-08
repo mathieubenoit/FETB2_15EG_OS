@@ -14,3 +14,8 @@ CONFIG_python3-periphery
 CONFIG_git
 CONFIG_git-perltools
 CONFIG_nano
+CONFIG_go
+CONFIG_gofetb2daq
+CONFIG_Si5345Init
+CONFIG_xvc-driver
+CONFIG_xvcserver

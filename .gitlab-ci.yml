@@ -1,0 +1,20 @@
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - docker
+  image: 
+    name: gitlab-registry.cern.ch/bnl-atlas/larphase2/fetb2/fetb2os/petalinuxdocker:2020p2
+  artifacts:
+    paths:
+      - images/linux/rootfs.tar.gz
+      - images/linux/Image
+      - images/linux/boot.scr
+      - images/linux/BOOT.BIN
+     
+  script:
+    - source /opt/Xilinx/petalinux/settings.sh
+    - petalinux-build  
+    - source package_CI.sh

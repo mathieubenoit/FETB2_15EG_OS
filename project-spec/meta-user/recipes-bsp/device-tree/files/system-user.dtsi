@@ -6,11 +6,64 @@
 #include "zynqmp_enclustra_mercury_st1.dtsi"
 #include "zynqmp_enclustra_mercury_xu1.dtsi"
 
+
 &i2c0 {
 	i2cswitch@70 {
-		    	 compatible = "nxp,pca9548";
-			 #address-cells = <1>;
-		    	 #size-cells = <0>;
-		    	 reg = <0x70>;
+		    	compatible = "nxp,pca9548";
+			 	#address-cells = <1>;
+		    	#size-cells = <0>;
+		        reg = <0x70>;
+				i2c@0{
+					#address-cells = <1>;
+					#size-cells = <0>;
+					reg = <0>;
+					ina226@40 {
+						compatible = "ti,ina226";
+						reg = <0x40>;
+						shunt-resistor = <5000>;
+						};
+					ina226@44 {
+						compatible = "ti,ina226";
+						reg = <0x44>;
+						shunt-resistor = <5000>;
+						};
+					ina226@41 {
+						compatible = "ti,ina226";
+						reg = <0x41>;
+						shunt-resistor = <1000>;
+						};
+					ina226@45 {
+						compatible = "ti,ina226";
+						reg = <0x45>;
+						shunt-resistor = <1000>;
+						};
+				};
+				i2c@2{
+					#address-cells = <1>;
+					#size-cells = <0>;
+					reg = <2>;
+					temp-sensor@1c {
+						compatible = "maxim,max6698";
+						reg = <0x1c>;
+						smbus-timeout-disable;
+						resistance-cancellation;
+						alert-mask = <0x72>;
+						over-temperature-mask = <0x7f>;
+					};
+				};
 	};
 };
+
+
+&spi1 { 
+        spidev@0 {
+            compatible = "spidev";
+            reg = <0>;
+            spi-max-frequency = <400000>;
+    };
+};
+
+// &debug_bridge_0 {
+//         compatible = "xlnx,xvc";
+// };
+
