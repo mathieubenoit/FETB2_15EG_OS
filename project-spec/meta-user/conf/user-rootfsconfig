@@ -16,6 +16,7 @@ CONFIG_git-perltools
 CONFIG_nano
 CONFIG_go
 CONFIG_gofetb2daq
-CONFIG_Si5345Init
+CONFIG_si5345init
 CONFIG_xvc-driver
 CONFIG_xvcserver
+CONFIG_si5345tool

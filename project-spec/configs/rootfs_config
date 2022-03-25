@@ -4247,17 +4247,17 @@ CONFIG_auto-login=y
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
+# CONFIG_si5345init is not set
 CONFIG_xvcserver=y
 
 #
 # modules 
 #
-CONFIG_xvc-driver=y
+# CONFIG_xvc-driver is not set
 
 #
 # user packages 
 #
-# CONFIG_Si5345Init is not set
 CONFIG_go=y
 CONFIG_gofetb2daq=y
 CONFIG_iperf3=y
@@ -4267,6 +4267,7 @@ CONFIG_phytool=y
 CONFIG_python-periphery=y
 CONFIG_python3-jupyter=y
 CONFIG_python3-periphery=y
+CONFIG_si5345tool=y
 
 #
 # PetaLinux RootFS Settings
