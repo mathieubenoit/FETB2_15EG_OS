@@ -17,6 +17,7 @@ CONFIG_nano
 CONFIG_go
 CONFIG_gofetb2daq
 CONFIG_si5345init
+CONFIG_xvcserverinit
 CONFIG_xvc-driver
 CONFIG_xvcserver
 CONFIG_si5345tool

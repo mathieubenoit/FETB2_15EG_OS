@@ -4247,13 +4247,14 @@ CONFIG_auto-login=y
 #
 # CONFIG_gpio-demo is not set
 # CONFIG_peekpoke is not set
-# CONFIG_si5345init is not set
+CONFIG_si5345init=y
 CONFIG_xvcserver=y
+CONFIG_xvcserverinit=y
 
 #
 # modules 
 #
-# CONFIG_xvc-driver is not set
+CONFIG_xvc-driver=y
 
 #
 # user packages 

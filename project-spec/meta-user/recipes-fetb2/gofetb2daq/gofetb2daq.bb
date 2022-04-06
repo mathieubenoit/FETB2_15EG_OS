@@ -4,6 +4,7 @@ LICENSE = "CLOSED"
 GO_IMPORT = "gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git"
 SRC_URI = "git://gitlab.cern.ch/BNL-ATLAS/larphase2/fetb2/gofetb2daq.git;protocol=https;branch=master;user=oauth2:LNKYs1ksNs7sut9ApXTf"
 SRCREV = "${AUTOREV}"
+PV = "1.0+git${SRCPV}"
 
 GO_INSTALL = "${GO_IMPORT}/bin/linux_arm64/*"
 
@@ -20,7 +21,7 @@ do_compile() {
 	${GO} mod tidy
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build I2CTool.go 
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build SYSFSTool.go  
-	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build AXIRegisterTool.go  	
+	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build AXIRegisterTool.go  	  
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build FETB2ADCTool.go   
 	chmod -R 700 ${GOPATH}/pkg
 }

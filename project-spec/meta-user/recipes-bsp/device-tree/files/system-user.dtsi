@@ -2,7 +2,8 @@
 / {
 	model = "Enclustra ME-XU1-15EG-1E-D12E-G1 SOM";
 	aliases {
-		spi2 = "/amba/spi@ff040000";
+		spi1 = "/amba/spi@ff040000";
+		spi2 = "/amba/spi@ff050000";
 	};
 };
 #include "zynqmp_enclustra_common.dtsi"
@@ -15,6 +16,20 @@
             spidev@0 {
 				compatible = "spidev";
 				reg = <0>;
+				spi-cs-high;
+				spi-max-frequency = <400000>;
+    		};
+        };
+	};
+};
+
+/ {
+	amba {
+           spi@ff050000 {
+            spidev@0 {
+				compatible = "spidev";
+				reg = <0>;
+				spi-cs-high;
 				spi-max-frequency = <400000>;
     		};
         };
@@ -69,13 +84,13 @@
 };
 
 
-&spi1 { 
-        spidev@0 {
-            compatible = "spidev";
-            reg = <0>;
-            spi-max-frequency = <400000>;
-    };
-};
+// &spi1 { 
+//         spidev@0 {
+//             compatible = "spidev";
+//             reg = <0>;
+//             spi-max-frequency = <400000>;
+//     };
+// };
 
 // &spi2 { 
 //         spidev@0 {
@@ -85,9 +100,9 @@
 //     };
 // };
 
-&debug_bridge_0 {
-        compatible = "xlnx,xvc";
-};
+// &debug_bridge_0 {
+//         compatible = "xlnx,xvc";
+// };
 
 
 
