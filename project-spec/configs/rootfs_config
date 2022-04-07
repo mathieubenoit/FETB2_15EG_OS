@@ -4273,5 +4273,5 @@ CONFIG_si5345tool=y
 #
 # PetaLinux RootFS Settings
 #
-CONFIG_ROOTFS_ROOT_PASSWD="root"
+CONFIG_ROOTFS_ROOT_PASSWD="fetb2"
 CONFIG_ADD_EXTRA_USERS="petalinux:petalinux;"
