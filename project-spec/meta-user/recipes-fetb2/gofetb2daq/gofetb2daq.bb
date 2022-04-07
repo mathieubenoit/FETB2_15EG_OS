@@ -18,7 +18,7 @@ FILES_${PN} += "/home/root/*"
 do_compile() {
 	chmod -R 700 ${GOPATH}/pkg
 	cd ${S}/src/${GO_IMPORT}/Exec
-	${GO} mod tidy
+	${GO} mod tidy -compat=1.17
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build I2CTool.go 
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build SYSFSTool.go  
 	GOOS=${GOOS} GOARCH=${GOARCH} ${GO} build AXIRegisterTool.go  	  
