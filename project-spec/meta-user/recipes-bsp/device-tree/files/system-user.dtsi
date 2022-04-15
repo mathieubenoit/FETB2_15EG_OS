@@ -32,26 +32,26 @@
 					#address-cells = <1>;
 					#size-cells = <0>;
 					reg = <0>;
-					ina226@40 {
-						compatible = "ti,ina226";
-						reg = <0x40>;
-						shunt-resistor = <5000>;
-						};
-					ina226@44 {
-						compatible = "ti,ina226";
-						reg = <0x44>;
-						shunt-resistor = <5000>;
-						};
-					ina226@41 {
-						compatible = "ti,ina226";
-						reg = <0x41>;
-						shunt-resistor = <1000>;
-						};
-					ina226@45 {
-						compatible = "ti,ina226";
-						reg = <0x45>;
-						shunt-resistor = <1000>;
-						};
+					// ina226@40 {
+					// 	compatible = "ti,ina226";
+					// 	reg = <0x40>;
+					// 	shunt-resistor = <5000>;
+					// 	};
+					// ina226@44 {
+					// 	compatible = "ti,ina226";
+					// 	reg = <0x44>;
+					// 	shunt-resistor = <5000>;
+					// 	};
+					// ina226@41 {
+					// 	compatible = "ti,ina226";
+					// 	reg = <0x41>;
+					// 	shunt-resistor = <1000>;
+					// 	};
+					// ina226@45 {
+					// 	compatible = "ti,ina226";
+					// 	reg = <0x45>;
+					// 	shunt-resistor = <1000>;
+					// 	};
 				};
 				i2c@2{
 					#address-cells = <1>;
