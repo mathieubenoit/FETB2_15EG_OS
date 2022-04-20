@@ -325,7 +325,7 @@ CONFIG_mtd-utils=y
 #
 # tzdata 
 #
-CONFIG_tzdata=y
+# CONFIG_tzdata is not set
 # CONFIG_tzdata-pacific is not set
 # CONFIG_tzdata-posix is not set
 # CONFIG_tzdata-antarctica is not set
@@ -4245,11 +4245,8 @@ CONFIG_auto-login=y
 #
 # apps 
 #
-# CONFIG_gpio-demo is not set
-# CONFIG_peekpoke is not set
-CONFIG_si5345init=y
+CONFIG_fetb2init=y
 CONFIG_xvcserver=y
-CONFIG_xvcserverinit=y
 
 #
 # modules 
@@ -4261,9 +4258,13 @@ CONFIG_xvc-driver=y
 #
 CONFIG_go=y
 CONFIG_gofetb2daq=y
+CONFIG_ina228tool=y
 CONFIG_iperf3=y
 CONFIG_memtester=y
 CONFIG_nano=y
+CONFIG_ntp=y
+CONFIG_ntpdate=y
+CONFIG_ntpq=y
 CONFIG_phytool=y
 CONFIG_python-periphery=y
 CONFIG_python3-jupyter=y

@@ -1,8 +1,6 @@
 #Note: Mention Each package in individual line
 #These packages will get added into rootfs menu entry
 
-CONFIG_gpio-demo
-CONFIG_peekpoke
 CONFIG_iperf3
 CONFIG_memtester
 CONFIG_phytool
@@ -16,8 +14,12 @@ CONFIG_git-perltools
 CONFIG_nano
 CONFIG_go
 CONFIG_gofetb2daq
-CONFIG_si5345init
-CONFIG_xvcserverinit
 CONFIG_xvc-driver
 CONFIG_xvcserver
 CONFIG_si5345tool
+CONFIG_ina228tool
+CONFIG_fetb2init
+CONFIG_ntp
+CONFIG_ntpq
+CONFIG_ntpdate 
+CONFIG_tzdata

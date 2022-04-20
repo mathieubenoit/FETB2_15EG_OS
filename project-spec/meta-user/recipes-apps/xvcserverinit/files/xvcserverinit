@@ -1,4 +1,0 @@
-#!/bin/sh
-modprobe xvc-driver
-xvcServer &
-

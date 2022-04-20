@@ -777,7 +777,7 @@
 					// 	shunt-resistor = <0x3e8>;
 					// };
 
-					// ina226@45 {
+					// ina226@45 {	
 					// 	compatible = "ti,ina226";
 					// 	reg = <0x45>;
 					// 	shunt-resistor = <0x3e8>;
@@ -1561,5 +1561,19 @@
 	memory {
 		device_type = "memory";
 		reg = <0x0 0x0 0x0 0x7ff00000>;
+	};
+	
+
+	reserved-memory {
+      #address-cells = <1>;
+      #size-cells = <1>;
+      ranges;
+  
+      reserved: axilite@80000000{
+		compatible = "shared-dma-pool";
+		no-map;
+        reg = <0x80000000 0x00001000>;
+		linux,cma-default;
+      };
 	};
 };

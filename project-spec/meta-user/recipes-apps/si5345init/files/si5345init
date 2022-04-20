@@ -1,4 +1,0 @@
-#!/bin/sh
-
-exec /home/root/Si5345Tool -f /home/root/si5345.csv
-
