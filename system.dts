@@ -758,30 +758,6 @@
 					#address-cells = <0x1>;
 					#size-cells = <0x0>;
 					reg = <0x0>;
-
-					// ina226@40 {
-					// 	compatible = "ti,ina226";
-					// 	reg = <0x40>;
-					// 	shunt-resistor = <0x1388>;
-					// };
-
-					// ina226@44 {
-					// 	compatible = "ti,ina226";
-					// 	reg = <0x44>;
-					// 	shunt-resistor = <0x1388>;
-					// };
-
-					// ina226@41 {
-					// 	compatible = "ti,ina226";
-					// 	reg = <0x41>;
-					// 	shunt-resistor = <0x3e8>;
-					// };
-
-					// ina226@45 {	
-					// 	compatible = "ti,ina226";
-					// 	reg = <0x45>;
-					// 	shunt-resistor = <0x3e8>;
-					// };
 				};
 
 				i2c@2 {
@@ -1496,6 +1472,23 @@
 		compatible = "simple-bus";
 		ranges;
 
+		clk_wiz@a0010000 {
+			#clock-cells = <0x1>;
+			clock-names = "s_axi_aclk", "clk_in1";
+			clock-output-names = "0xa0010000-clk_out1";
+			clocks = <0x3 0x47 0x1e>;
+			compatible = "xlnx,clk-wiz-6.0", "xlnx,clocking-wizard";
+			reg = <0x0 0xa0010000 0x0 0x10000>;
+			speed-grade = <0x1>;
+		};
+
+		misc_clk_0 {
+			#clock-cells = <0x0>;
+			clock-frequency = <0x2625a00>;
+			compatible = "fixed-clock";
+			phandle = <0x1e>;
+		};
+
 		debug_bridge@a0000000 {
 			clock-names = "s_axi_aclk";
 			clocks = <0x3 0x47>;
@@ -1561,19 +1554,5 @@
 	memory {
 		device_type = "memory";
 		reg = <0x0 0x0 0x0 0x7ff00000>;
-	};
-	
-
-	reserved-memory {
-      #address-cells = <1>;
-      #size-cells = <1>;
-      ranges;
-  
-      reserved: axilite@80000000{
-		compatible = "shared-dma-pool";
-		no-map;
-        reg = <0x80000000 0x00001000>;
-		linux,cma-default;
-      };
 	};
 };
