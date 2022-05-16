@@ -325,13 +325,13 @@ CONFIG_mtd-utils=y
 #
 # tzdata 
 #
-# CONFIG_tzdata is not set
+CONFIG_tzdata=y
 # CONFIG_tzdata-pacific is not set
 # CONFIG_tzdata-posix is not set
 # CONFIG_tzdata-antarctica is not set
 # CONFIG_tzdata-africa is not set
-# CONFIG_tzdata-europe is not set
-# CONFIG_tzdata-americas is not set
+CONFIG_tzdata-europe=y
+CONFIG_tzdata-americas=y
 # CONFIG_tzdata-right is not set
 # CONFIG_tzdata-atlantic is not set
 # CONFIG_tzdata-australia is not set
@@ -4270,6 +4270,7 @@ CONFIG_python-periphery=y
 CONFIG_python3-jupyter=y
 CONFIG_python3-periphery=y
 CONFIG_si5345tool=y
+# CONFIG_tzdataCONFIG is not set
 
 #
 # PetaLinux RootFS Settings
