@@ -1555,4 +1555,44 @@
 		device_type = "memory";
 		reg = <0x0 0x0 0x0 0x7ff00000>;
 	};
+
+	reserved-memory {
+      #address-cells = <2>;
+      #size-cells = <2>;
+      ranges;
+  
+      hp0: HP0@10000000 {
+         no-map;
+         reg = <0x0 0x10000000 0x0 0x8000000>;
+      };
+      hp1: HP1@20000000 {
+         no-map;
+         reg = <0x0 0x20000000 0x0 0x8000000>;
+      };
+	  hp2: HP2@10000000 {
+         no-map;
+         reg = <0x0 0x30000000 0x0 0x8000000>;
+      };
+      hp3: HP3@30000000 {
+         no-map;
+         reg = <0x0 0x40000000 0x0 0x8000000>;
+      };
+   };
+
+	hp0drv: hp0-driver@10000000 {
+      compatible = "xlnx,reserved-memory";
+      memory-region = <&hp0>;
+   };
+    hp1drv: hp1-driver@20000000 {
+      compatible = "xlnx,reserved-memory";
+      memory-region = <&hp1>;
+   };    
+   hp2drv: hp2-driver@30000000 {
+      compatible = "xlnx,reserved-memory";
+      memory-region = <&hp2>;
+   };    
+   hp3drv: hp3-driver@40000000 {
+      compatible = "xlnx,reserved-memory";
+      memory-region = <&hp3>;
+   };
 };

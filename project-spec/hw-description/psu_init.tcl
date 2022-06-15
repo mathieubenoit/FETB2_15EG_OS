@@ -712,6 +712,25 @@ set psu_clock_init_data {
 		# This register controls this reference clock
 		#(OFFSET, MASK, VALUE)      (0XFF5E0120, 0x013F3F07U ,0x01010F00U)  */
     mask_write 0XFF5E0120 0x013F3F07 0x01010F00
+		# Register : I2C1_REF_CTRL @ 0XFF5E0124</p>
+
+		# Clock active signal. Switch to 0 to disable the clock
+		# PSU_CRL_APB_I2C1_REF_CTRL_CLKACT                                                0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_I2C1_REF_CTRL_DIVISOR1                                              0x1
+
+		# 6 bit divider
+		# PSU_CRL_APB_I2C1_REF_CTRL_DIVISOR0                                              0xf
+
+		# 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    # ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    #  usually an issue, but designers must be aware.)
+		# PSU_CRL_APB_I2C1_REF_CTRL_SRCSEL                                                0x0
+
+		# This register controls this reference clock
+		#(OFFSET, MASK, VALUE)      (0XFF5E0124, 0x013F3F07U ,0x01010F00U)  */
+    mask_write 0XFF5E0124 0x013F3F07 0x01010F00
 		# Register : SPI0_REF_CTRL @ 0XFF5E007C</p>
 
 		# Clock active signal. Switch to 0 to disable the clock
@@ -13999,10 +14018,13 @@ set psu_peripherals_init_data {
 		# Block level reset
 		# PSU_CRL_APB_RST_LPD_IOU2_I2C0_RESET                                             0
 
+		# Block level reset
+		# PSU_CRL_APB_RST_LPD_IOU2_I2C1_RESET                                             0
+
 		# Software control register for the IOU block. Each bit will cause a singl
     # erperipheral or part of the peripheral to be reset.
-		#(OFFSET, MASK, VALUE)      (0XFF5E0238, 0x00000200U ,0x00000000U)  */
-    mask_write 0XFF5E0238 0x00000200 0x00000000
+		#(OFFSET, MASK, VALUE)      (0XFF5E0238, 0x00000600U ,0x00000000U)  */
+    mask_write 0XFF5E0238 0x00000600 0x00000000
 		# : SWDT
 		# Register : RST_LPD_IOU2 @ 0XFF5E0238</p>
 
@@ -16273,6 +16295,42 @@ set psu_afi_config {
     # modified during operation.
 		#(OFFSET, MASK, VALUE)      (0XFD615000, 0x00000F00U ,0x00000000U)  */
     mask_write 0XFD615000 0x00000F00 0x00000000
+		# Register : AFIFM_RDCTRL @ 0XFD380000</p>
+
+		# Configures the Read Channel Fabric interface width. 2'b11 : Reserved 2'b
+    # 10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM2_AFIFM_RDCTRL_FABRIC_WIDTH                                            0x0
+
+		# Read Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD380000, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD380000 0x00000003 0x00000000
+		# Register : AFIFM_RDCTRL @ 0XFD390000</p>
+
+		# Configures the Read Channel Fabric interface width. 2'b11 : Reserved 2'b
+    # 10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM3_AFIFM_RDCTRL_FABRIC_WIDTH                                            0x0
+
+		# Read Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD390000, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD390000 0x00000003 0x00000000
+		# Register : AFIFM_WRCTRL @ 0XFD380014</p>
+
+		# Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
+    # b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM2_AFIFM_WRCTRL_FABRIC_WIDTH                                            0x0
+
+		# Write Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD380014, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD380014 0x00000003 0x00000000
+		# Register : AFIFM_WRCTRL @ 0XFD390014</p>
+
+		# Configures the Write Channel Fabric interface width. 2'b11 : Reserved 2'
+    # b10 : 32-bit Fabric 2'b01 : 64-bit enabled 2'b00 : 128-bit enabled
+		# PSU_AFIFM3_AFIFM_WRCTRL_FABRIC_WIDTH                                            0x0
+
+		# Write Channel Control Register
+		#(OFFSET, MASK, VALUE)      (0XFD390014, 0x00000003U ,0x00000000U)  */
+    mask_write 0XFD390014 0x00000003 0x00000000
 }
 
 set psu_ps_pl_reset_config_data {
