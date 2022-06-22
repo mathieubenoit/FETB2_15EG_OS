@@ -9,6 +9,8 @@ CONFIG_python3
 CONFIG_python3-jupyter
 CONFIG_python-periphery
 CONFIG_python3-periphery
+CONFIG_python3-numpy
+CONFIG_python3-scipy
 CONFIG_git
 CONFIG_git-perltools
 CONFIG_nano
@@ -22,4 +24,5 @@ CONFIG_fetb2init
 CONFIG_ntp
 CONFIG_ntpq
 CONFIG_ntpdate 
-CONFIG_tzdataCONFIG_ADCInit
+CONFIG_tzdata
+CONFIG_ADCInit

@@ -779,7 +779,7 @@
 
 		i2c@ff030000 {
 			compatible = "cdns,i2c-r1p14", "cdns,i2c-r1p10";
-			status = "disabled";
+			status = "okay";
 			interrupt-parent = <0x4>;
 			interrupts = <0x0 0x12 0x4>;
 			reg = <0x0 0xff030000 0x0 0x1000>;
@@ -787,6 +787,7 @@
 			#size-cells = <0x0>;
 			power-domains = <0xc 0x26>;
 			clocks = <0x3 0x3e>;
+			clock-frequency = <0x61a80>;
 		};
 
 		memory-controller@ff960000 {
@@ -1475,7 +1476,7 @@
 		clk_wiz@a0010000 {
 			#clock-cells = <0x1>;
 			clock-names = "s_axi_aclk", "clk_in1";
-			clock-output-names = "0xa0010000-clk_out1";
+			clock-output-names = "0xa0010000-clk_out1", "0xa0010000-clk_out2", "0xa0010000-clk_out3", "0xa0010000-clk_out4";
 			clocks = <0x3 0x47 0x1e>;
 			compatible = "xlnx,clk-wiz-6.0", "xlnx,clocking-wizard";
 			reg = <0x0 0xa0010000 0x0 0x10000>;
@@ -1536,6 +1537,10 @@
 		};
 	};
 
+	AXI_MON_CTRL@a0020000 {
+		reg = <0x0 0xa0020000 0x0 0x10000>;
+	};
+
 	chosen {
 		bootargs = " earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait";
 		stdout-path = "serial0:115200n8";
@@ -1545,6 +1550,7 @@
 		ethernet0 = "/amba/ethernet@ff0b0000";
 		ethernet1 = "/amba/ethernet@ff0e0000";
 		i2c0 = "/amba/i2c@ff020000";
+		i2c1 = "/amba/i2c@ff030000";
 		serial0 = "/amba/serial@ff000000";
 		spi0 = "/amba/spi@ff0f0000";
 		spi1 = "/amba/spi@ff040000";
@@ -1565,17 +1571,17 @@
          no-map;
          reg = <0x0 0x10000000 0x0 0x8000000>;
       };
-      hp1: HP1@20000000 {
-         no-map;
-         reg = <0x0 0x20000000 0x0 0x8000000>;
-      };
-	  hp2: HP2@10000000 {
+      hp1: HP1@30000000 {
          no-map;
          reg = <0x0 0x30000000 0x0 0x8000000>;
       };
-      hp3: HP3@30000000 {
+	  hp2: HP2@40000000 {
          no-map;
          reg = <0x0 0x40000000 0x0 0x8000000>;
+      };
+      hp3: HP3@50000000 {
+         no-map;
+         reg = <0x0 0x50000000 0x0 0x8000000>;
       };
    };
 
@@ -1583,15 +1589,15 @@
       compatible = "xlnx,reserved-memory";
       memory-region = <&hp0>;
    };
-    hp1drv: hp1-driver@20000000 {
+    hp1drv: hp1-driver@30000000 {
       compatible = "xlnx,reserved-memory";
       memory-region = <&hp1>;
    };    
-   hp2drv: hp2-driver@30000000 {
+   hp2drv: hp2-driver@40000000 {
       compatible = "xlnx,reserved-memory";
       memory-region = <&hp2>;
    };    
-   hp3drv: hp3-driver@40000000 {
+   hp3drv: hp3-driver@50000000 {
       compatible = "xlnx,reserved-memory";
       memory-region = <&hp3>;
    };
