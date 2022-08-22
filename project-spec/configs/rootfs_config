@@ -4257,6 +4257,7 @@ CONFIG_xvc-driver=y
 # user packages 
 #
 # CONFIG_ADCInit is not set
+CONFIG_fetb2pythontools=y
 CONFIG_go=y
 CONFIG_gofetb2daq=y
 CONFIG_ina228tool=y

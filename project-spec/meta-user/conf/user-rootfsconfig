@@ -26,3 +26,4 @@ CONFIG_ntpq
 CONFIG_ntpdate 
 CONFIG_tzdata
 CONFIG_ADCInit
+CONFIG_fetb2pythontools

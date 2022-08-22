@@ -26,8 +26,8 @@ do_compile() {
 
 do_install() {
 
-	install -m 0644 -d ${D}/home/root
-	install -m 0755 src/${GO_IMPORT}/Si5345Tool ${D}/home/root/Si5345Tool
+	install -m 0644 -d ${D}/home/root/bin
+	install -m 0755 src/${GO_IMPORT}/Si5345Tool ${D}/home/root/bin/Si5345Tool
 	install -m 0755 src/${GO_IMPORT}/si5345.csv ${D}/home/root/si5345.csv
 
 }
