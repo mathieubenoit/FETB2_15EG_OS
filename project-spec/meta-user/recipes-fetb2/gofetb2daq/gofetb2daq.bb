@@ -45,10 +45,13 @@ do_install() {
 	install -m 0644 -d ${D}/home/root/config
 	install -m 0644 -d ${D}/home/root/bitstream
 
-	find src/${GO_IMPORT}/Config -type f -exec install -Dm 755 "{}" "${D}/home/root/config" \;
+	#find src/${GO_IMPORT}/Config -type f -exec install -Dm 755 "{}" "${D}/home/root/config" \;
+
+	cp -r src/${GO_IMPORT}/Config/* ${D}/home/root/config
+	chmod -R 0644 ${D}/home/root/config
 
 	install -m 0755 src/${GO_IMPORT}/Config/fpga_top.bit ${D}/home/root/bitstream/fpga_top.bit
-	
+
 	install -m 0755 src/${GO_IMPORT}/Exec/I2CTool ${D}/home/root/bin/I2CTool
 	install -m 0755 src/${GO_IMPORT}/Exec/SYSFSTool ${D}/home/root/bin/SYSFSTool
 	install -m 0755 src/${GO_IMPORT}/Exec/AXIRegisterTool ${D}/home/root/bin/AXIRegisterTool
