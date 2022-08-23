@@ -1,7 +1,4 @@
 #!/bin/sh
-modprobe xvc-driver
-xvcServer &
-
 
 export TZ="GMT+4"
 

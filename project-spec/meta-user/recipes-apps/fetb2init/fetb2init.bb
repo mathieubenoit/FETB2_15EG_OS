@@ -28,7 +28,8 @@ do_install() {
 		install -d ${D}${sysconfdir}/init.d
 		install -m 0644 -d ${D}/home/root
 		install -m 0755 ${S}/.profile ${D}/home/root/.profile
-
+		install -m 0755 ${S}/startup.sh ${D}/home/root/startup.sh
+		chmod +x ${D}/home/root/startup.sh
 }
 
 FILES_${PN} += "${sysconfdir}/*"
