@@ -19,6 +19,7 @@ do_install() {
 	install -m 0644 -d ${D}/home/root/fetb2_test_scripts/jupyter
 	install -m 0644 -d ${D}/home/root/fetb2_test_scripts/python_debug_driver
 
+
 	install -m 0755  -D *.* ${D}/home/root/fetb2_test_scripts 
 	#find . -type f -exec install -Dm 755 "{}" "${D}/home/root/fetb2_test_scripts" \;
 

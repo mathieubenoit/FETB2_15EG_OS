@@ -8,7 +8,8 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 SRC_URI = "file://fetb2init \
-	file://.profile"
+	file://.profile \
+	file://startup.sh"
 S = "${WORKDIR}"
 
 
@@ -18,6 +19,7 @@ INITSCRIPT_PARAMS = "start 99 5 2 . stop 20 0 1 6 ."
 
 FILES_${PN} += "/home/root/*"
 FILES_${PN} += "/home/root/.profile"
+FILES_${PN} += "/home/root/startup.sh"
 
 do_install() {
 		install -d ${D}${sysconfdir}/init.d
